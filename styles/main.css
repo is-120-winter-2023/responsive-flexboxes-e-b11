@@ -91,6 +91,8 @@ img[src$="svg"] {
 }
 
 /************ add your CSS here *****************/
+
+/* Main Elements */
 body {
   display: flex;
   flex-direction: column;
@@ -166,6 +168,7 @@ footer {
   margin: 0;
 }
 
+/* * A * */
 header nav a {
   text-decoration: none;
   font-family: Lato;
@@ -181,13 +184,15 @@ a {
 }
 
 a[href]:hover {
-  /* font-family: Lato; */
+  text-decoration: none;
 }
 
 header nav a[href]:hover {
   color: var(--bright-rose);
   font-weight: bold;
 }
+
+/* Button */
 
 .button {
   color: var(--soft-magenta);
@@ -231,7 +236,7 @@ header nav a[href]:hover {
 .hero p {
   color: white;
   text-shadow: black 1px 1px 2px;
-  font-size: clamp(0.5rem, 1vw + 0.75rem, 4rem);
+  font-size: clamp(0.2rem, 1vw + 0.75rem, 4rem);
 }
 
 .hero::before {
@@ -259,6 +264,7 @@ header nav a[href]:hover {
 
 .cards {
   display: flex;
+  flex-direction: column;
   margin-left: 1rem;
   margin-right: 1rem;
   margin-bottom: 1rem;
@@ -295,20 +301,13 @@ header nav a[href]:hover {
   order: -1;
 }
 
-.panel .text-wrapper {
-  padding: 1rem;
-}
-
-.left {
-  order: 1;
-}
-
 /* Media Queries */
 @media (min-width: 500px) {
   .panel {
     flex-direction: row;
     margin-top: 3rem;
     margin-bottom: 3rem;
+    gap: 1rem;
   }
 
   .panel h2 {
@@ -322,5 +321,24 @@ header nav a[href]:hover {
   .panel .image-wrapper {
     order: 0;
     flex: 1 1 60%;
+  }
+
+  .panel .left {
+    order: 1;
+  }
+
+  .cards {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .card {
+    flex: 1 1 40%;
+  }
+}
+
+@media (min-width: 1000px) {
+  .cards {
+    flex-wrap: nowrap;
   }
 }
