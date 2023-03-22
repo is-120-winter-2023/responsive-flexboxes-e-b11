@@ -8,7 +8,7 @@
 /*****************************************************/
 :root {
   --indigo: #355070;
-  --misty-violet: #6d597a;
+  --misty-violet: #6d226b;
   --soft-magenta: #b56576;
   --bright-rose: #e56b6f;
   --sandy: #faeae1;
@@ -95,7 +95,6 @@ body {
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  font-family: Lato;
   color: #040404;
 }
 
@@ -148,6 +147,7 @@ main {
 
 p {
   margin-bottom: 1.5em;
+  font-family: Lato;
 }
 
 article,
@@ -168,6 +168,7 @@ footer {
 
 header nav a {
   text-decoration: none;
+  font-family: Lato;
   color: var(--soft-magenta);
   display: block;
   padding: 1rem;
@@ -180,7 +181,7 @@ a {
 }
 
 a[href]:hover {
-  font-family: Lato;
+  /* font-family: Lato; */
 }
 
 header nav a[href]:hover {
@@ -191,16 +192,17 @@ header nav a[href]:hover {
 .button {
   color: var(--soft-magenta);
   text-decoration: none;
+  font-family: Lato;
   border: 3px solid var(--soft-magenta);
   padding: 0.2em 0.4em;
   display: inline-block;
-  transition: background-color 300ms ease, color 300ms ease, border 300ms ease;
+  transition: background-color 300ms ease, color 300ms ease;
   margin-top: 1em;
 }
 
 .button:hover {
   color: white;
-  border: 3px solid white;
+  /* border: 3px solid white; */
   background-color: var(--soft-magenta);
   text-decoration: none;
   font-weight: normal;
@@ -217,7 +219,10 @@ header nav a[href]:hover {
   color: var(--bright-rose);
 }
 
-.hero-text {
+.hero-text-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   position: absolute;
   inset: 0;
   text-align: center;
@@ -259,17 +264,23 @@ header nav a[href]:hover {
   margin-bottom: 1rem;
 }
 
+.card p {
+  font-family: Playfair Display;
+}
+
 .card {
   flex: 1 1 0;
   padding: 0.6rem;
   max-width: 1000px;
-  transition: background-color 300ms ease;
+  transition: background-color 300ms ease, font-weight 300ms ease;
   text-decoration: none;
   color: var(--misty-violet);
+  font-size: 1.5rem;
 }
 
 .card:hover {
   background-color: rgb(0 0 0 / 10%);
+  font-weight: bold;
 }
 
 /* Articles */
@@ -282,6 +293,14 @@ header nav a[href]:hover {
 
 .panel .image-wrapper {
   order: -1;
+}
+
+.panel .text-wrapper {
+  padding: 1rem;
+}
+
+.left {
+  order: 1;
 }
 
 /* Media Queries */
