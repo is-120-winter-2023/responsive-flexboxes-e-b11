@@ -1,4 +1,5 @@
 <!-- cSpell:enable  -->
+This is the responsive flexboxes update to Emma's breakfast website.
 
 # Responsive flexboxes
 
